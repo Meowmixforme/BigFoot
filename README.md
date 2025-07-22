@@ -1,4 +1,4 @@
-# 🦶 BigFoot - ML Dashboard
+# 🦶 BigFoot
 
 An advanced, interactive dashboard for analysing Bigfoot (Sasquatch) sighting reports with machine learning and data visualisation. This project empowers researchers, data scientists, and enthusiasts to explore patterns in cryptid encounters, identify geographical and temporal hotspots, assess report credibility, and generate recommendations for field investigations.
 
