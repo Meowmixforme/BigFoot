@@ -1,4 +1,4 @@
-# 🦶 BigFoot ML Dashboard
+# 🦶 BigFoot - ML Dashboard
 
 An advanced, interactive dashboard for analysing Bigfoot (Sasquatch) sighting reports with machine learning and data visualisation. This project empowers researchers, data scientists, and enthusiasts to explore patterns in cryptid encounters, identify geographical and temporal hotspots, assess report credibility, and generate recommendations for field investigations.
 
@@ -71,7 +71,7 @@ The dashboard uses these classes extensively in its data analysis, machine learn
 git clone https://github.com/Meowmixforme/BigFoot.git
 cd BigFoot
 pip install -r requirements.txt
-streamlit run bigfoot_dashboard.py
+streamlit run BigFoot.py
 ```
 
 Then visit [http://localhost:8501](http://localhost:8501) in your browser.
@@ -82,7 +82,7 @@ Then visit [http://localhost:8501](http://localhost:8501) in your browser.
 
 ```
 BigFoot/
-├── bigfoot_dashboard.py      # Main Streamlit app
+├── BigFoot.py      # Main Streamlit app
 ├── requirements.txt          # Python dependencies
 ├── README.md                 # Project documentation
 ├── Dockerfile                # Containerisation (optional)
