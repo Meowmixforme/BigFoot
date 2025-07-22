@@ -6,7 +6,7 @@ An advanced, interactive dashboard for analysing Bigfoot (Sasquatch) sighting re
 
 ## 📚 What Does This Project Do?
 
-**BigFoot ML Dashboard** is a comprehensive analytics tool for Bigfoot sighting data, built in Python with Streamlit.  
+**BigFoot** is a comprehensive analytics tool for Bigfoot sighting data, built in Python with Streamlit.  
 It imports authentic sighting reports from the [Bigfoot Field Researchers Organization (BFRO)](http://bfro.net/GDB/), then processes, explores, and models the data to reveal actionable insights about when, where, and what types of encounters occur.
 
 ### Main Capabilities
