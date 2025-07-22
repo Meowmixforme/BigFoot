@@ -21,6 +21,21 @@ It imports authentic sighting reports from the [Bigfoot Field Researchers Organi
 - **Advanced Data Explorer:** Powerful search, filtering, statistical summaries, and export functionality for in-depth data analysis.
 - **Exportable Research Plans:** Automatically generates recommended field research plans and allows users to export filtered data.
 
+### About BFRO Sighting Classes
+
+BFRO sighting reports are categorised into three main classes:
+
+- **Class A:**  
+  Sighting involving clear visual observation in good conditions, typically by a reliable witness. These reports often include physical evidence (such as tracks) and are considered the highest quality and most credible.
+
+- **Class B:**  
+  Sighting involving possible visual observation or clear audio encounter (such as vocalisations or knocks), but lacking the clarity or reliability of Class A. These may be brief glimpses, indistinct shapes, or strong sounds, but without enough detail to be classified as Class A.
+
+- **Class C:**  
+  Reports based on second-hand information, stories, or anecdotal evidence. These are less reliable, often submitted by someone who heard about an encounter from another party, or where details are vague/incomplete.
+
+The dashboard uses these classes extensively in its data analysis, machine learning models, and visualisations.
+
 ### Example Questions You Can Explore
 
 - Where are Bigfoot sightings most common?
@@ -107,7 +122,7 @@ BigFoot/
 
 ## 👫 Contributing
 
-Pull requests, suggestions, and bug reports are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Pull requests, suggestions, and bug reports are welcome!
 
 ---
 
