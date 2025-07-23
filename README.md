@@ -1,4 +1,4 @@
-# BigFoot Sightings Analysis Dashboard
+# 🦶 BigFoot
 
 ## Project Overview
 
