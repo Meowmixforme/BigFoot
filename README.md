@@ -50,6 +50,11 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Time trends and data insights
    - Summary of sighting counts by classification
    - Basic data quality information
+  
+
+<img width="3777" height="1622" alt="Screenshot 2025-07-23 045821" src="https://github.com/user-attachments/assets/9fb6dd4f-f241-46e7-aecd-e1e378eea3fa" />
+
+
 
 2. **Geographic Analysis**
    - Interactive maps showing sighting locations
@@ -57,6 +62,10 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Hotspot detection and visualisation
    - State and regional analysis
    - Coordinate validation and mapping
+  
+
+<img width="3139" height="1863" alt="Screenshot 2025-07-23 045924" src="https://github.com/user-attachments/assets/75d8b7bc-6546-4fea-b0e3-b43376c33b68" />
+
 
 3. **Temporal Analysis**
    - Seasonal patterns in sighting frequency
@@ -64,6 +73,10 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Month and day-of-week analysis
    - Time-based anomalies
    - Historical reporting patterns
+  
+
+  <img width="3158" height="1844" alt="Screenshot 2025-07-23 045945" src="https://github.com/user-attachments/assets/d73b0ce7-0ed2-4733-b9f8-1b888c712954" />
+
 
 4. **Machine Learning Analysis**
    - [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) classification models for predicting report credibility
@@ -71,6 +84,10 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Cross-validation and model performance metrics
    - Prediction tools for hypothetical sightings
    - Model training on spatial and temporal features
+  
+  
+<img width="3172" height="1425" alt="Screenshot 2025-07-23 050013" src="https://github.com/user-attachments/assets/8b538928-752c-4412-b043-1a2a05218891" />
+
 
 5. **Anomaly Detection**
    - [Isolation Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html) algorithm for identifying suspicious reports
@@ -78,6 +95,11 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Quality control flagging
    - Unusual pattern identification
    - Data integrity checking
+  
+  
+<img width="3140" height="1704" alt="Screenshot 2025-07-23 050027" src="https://github.com/user-attachments/assets/3652741f-afd8-4b69-a8b3-2e61763d3af5" />
+
+
 
 6. **Location Recommendations**
    - Data-driven expedition planning
@@ -85,6 +107,9 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Analysis based on sighting density, quality, and recency
    - Research hotspot identification
    - Field investigation planning tools
+  
+<img width="3147" height="1723" alt="Screenshot 2025-07-23 050046" src="https://github.com/user-attachments/assets/a8ea85db-9c7e-42d4-8036-d68f2b172b45" />
+
 
 7. **Advanced Data Explorer**
    - Powerful search and filtering capabilities
@@ -93,6 +118,9 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Interactive data tables
    - Custom filtering options
    - Report detail viewing
+  
+
+  <img width="3127" height="1177" alt="Screenshot 2025-07-23 050058" src="https://github.com/user-attachments/assets/7daef287-2b9a-4c6e-91af-153a8b74c374" />
 
 8. **About Section**
    - Project methodology and data processing pipeline
