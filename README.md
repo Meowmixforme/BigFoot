@@ -101,7 +101,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 
 ### Data Processing Pipeline
 
-- **Data Ingestion:** Load BFRO CSV data from [GitHub repository](https://github.com/Meowmixforme/BigFoot) and [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv)
+- **Data Ingestion:** Load BFRO CSV data from [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv)
 - **Data Cleaning:** Remove invalid coordinates, parse timestamps
 - **Feature Engineering:** Extract temporal features, calculate distances
 - **Validation:** Filter unrealistic years, standardise classifications
@@ -147,7 +147,6 @@ pip install -r requirements.txt
 streamlit run BigFoot.py
 ```
 
-The application will be available at [http://localhost:8501](http://localhost:8501)
 
 ## Research Applications
 
@@ -173,7 +172,6 @@ The dashboard helps address questions such as:
 - **Dashboard Version:** 1.0.0
 - **Release Date:** 22 July 2025
 - **Python Version:** 3.8+
-- **Streamlit Community Cloud hosted**
 
 ---
 
