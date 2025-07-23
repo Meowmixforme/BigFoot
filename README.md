@@ -6,6 +6,11 @@ BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot s
 
 > _I'm a longtime fan of the BFRO and the TV series [Finding Bigfoot](https://www.imdb.com/title/tt1948830/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_finding%2520bigf), which inspired me to create this project to explore and visualise Bigfoot sighting data._
 
+
+
+<img width="1024" height="1024" alt="freepik__the-style-is-candid-image-photography-with-natural__3245" src="https://github.com/user-attachments/assets/08ad5fed-8333-457c-a9bb-2d3632600b10" />
+
+
 ## Data Source
 
 The primary dataset used in this project is [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv), originally sourced and cleaned by [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis), and ultimately derived from the [Bigfoot Field Researchers Organization (BFRO)](https://www.bfro.net/) database. Additional data files (such as bfro_reports.json and bfro_reports_geocoded.csv) from @kittychew’s repository are also referenced.
