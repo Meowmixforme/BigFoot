@@ -8,10 +8,13 @@ BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot s
 
 ## Data Source
 
-The dataset was taken from [this CSV file](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv) based on the BFRO database.
+The primary dataset used in this project is [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv), originally sourced and cleaned by [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis), and ultimately derived from the [Bigfoot Field Researchers Organization (BFRO)](https://www.bfro.net/) database. Additional data files (such as bfro_reports.json and bfro_reports_geocoded.csv) from @kittychew’s repository are also referenced.
 
-The project employs data from the [BFRO database](https://www.bfro.net/GDB/), which includes:
+**Attribution:**  
+- Special thanks to the Bigfoot Field Researchers Organization (BFRO) for providing the original dataset.  
+- Thanks to [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis) for data cleaning, processing, and making the dataset publicly available under the MIT License.
 
+The project employs data from the BFRO database, which includes:
 - Over 4,000 North American sightings from the 1960s to the present
 - Reports classified into Class A, B, and C categories
 - Geographic coordinates and timestamps
@@ -34,6 +37,8 @@ BigFoot/
 │   ├── components/         # UI components (header, sidebar, footer)
 │   ├── data/               # Data loading and processing
 │   └── views/              # Individual page views
+├── notebooks/              # Jupyter notebooks for data analysis
+│   └── Bigfoot.ipynb       # Exploratory analysis notebook
 ```
 
 ## Main Application Features
@@ -101,7 +106,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 
 ### Data Processing Pipeline
 
-- **Data Ingestion:** Load BFRO CSV data from [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv)
+- **Data Ingestion:** Load BFRO CSV data from [GitHub repository](https://github.com/Meowmixforme/BigFoot) and [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv)
 - **Data Cleaning:** Remove invalid coordinates, parse timestamps
 - **Feature Engineering:** Extract temporal features, calculate distances
 - **Validation:** Filter unrealistic years, standardise classifications
@@ -147,6 +152,7 @@ pip install -r requirements.txt
 streamlit run BigFoot.py
 ```
 
+The application will be available at [http://localhost:8501](http://localhost:8501)
 
 ## Research Applications
 
@@ -163,15 +169,20 @@ The dashboard helps address questions such as:
 
 - Data used under [Fair Use](https://www.copyright.gov/fair-use/more-info.html) for educational and research purposes
 - Original data from [BFRO publicly accessible database](https://www.bfro.net/GDB/)
+- Cleaned and processed dataset from [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis), released under the [MIT License](https://github.com/kittychew/bigfoot-sightings-analysis/blob/main/LICENSE)
 - No personal information collected or stored
 - Educational tool for demonstrating data science techniques
 - Includes appropriate disclaimers about scientific evidence
+
+**MIT License Notice:**  
+This project incorporates datasets and code from [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis), originally licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Version Information
 
 - **Dashboard Version:** 1.0.0
 - **Release Date:** 22 July 2025
 - **Python Version:** 3.8+
+- **Streamlit Community Cloud hosted**
 
 ---
 
