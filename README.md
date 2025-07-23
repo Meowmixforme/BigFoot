@@ -2,11 +2,15 @@
 
 ## Project Overview
 
-BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot sighting data, utilising machine learning and data visualisation. The application imports verified sighting reports from the Bigfoot Field Researchers Organisation (BFRO) database and processes them to reveal insights about when, where, and what types of encounters occur.
+BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot sighting data, utilising machine learning and data visualisation. The application imports verified sighting reports from the [BFRO](https://www.bfro.net/) (Bigfoot Field Researchers Organisation) and provides interactive dashboards, maps, and predictive tools for exploring cryptid reports.
+
+> _I'm a longtime fan of the BFRO and the TV series [Finding Bigfoot](https://www.imdb.com/title/tt1863572/), which inspired me to create this project to explore and visualise Bigfoot sighting data._
 
 ## Data Source
 
-The project employs data from the BFRO (Bigfoot Field Researchers Organisation) database, which includes:
+The dataset was taken from [this CSV file](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv) based on the BFRO database.
+
+The project employs data from the [BFRO database](https://www.bfro.net/GDB/), which includes:
 
 - Over 4,000 North American sightings from the 1960s to the present
 - Reports classified into Class A, B, and C categories
@@ -44,7 +48,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 
 2. **Geographic Analysis**
    - Interactive maps showing sighting locations
-   - Geographic clustering using KMeans and DBSCAN algorithms
+   - Geographic clustering using [KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) and [DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html) algorithms
    - Hotspot detection and visualisation
    - State and regional analysis
    - Coordinate validation and mapping
@@ -57,14 +61,14 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
    - Historical reporting patterns
 
 4. **Machine Learning Analysis**
-   - Random Forest classification models for predicting report credibility
+   - [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) classification models for predicting report credibility
    - Feature importance analysis
    - Cross-validation and model performance metrics
    - Prediction tools for hypothetical sightings
    - Model training on spatial and temporal features
 
 5. **Anomaly Detection**
-   - Isolation Forest algorithm for identifying suspicious reports
+   - [Isolation Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html) algorithm for identifying suspicious reports
    - Statistical outlier detection
    - Quality control flagging
    - Unusual pattern identification
@@ -80,7 +84,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 7. **Advanced Data Explorer**
    - Powerful search and filtering capabilities
    - Statistical summaries and analysis
-   - Data export functionality (CSV, JSON formats)
+   - Data export functionality ([CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [JSON](https://www.json.org/json-en.html) formats)
    - Interactive data tables
    - Custom filtering options
    - Report detail viewing
@@ -97,7 +101,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 
 ### Data Processing Pipeline
 
-- **Data Ingestion:** Load BFRO CSV data from GitHub repository
+- **Data Ingestion:** Load BFRO CSV data from [GitHub repository](https://github.com/Meowmixforme/BigFoot) and [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv)
 - **Data Cleaning:** Remove invalid coordinates, parse timestamps
 - **Feature Engineering:** Extract temporal features, calculate distances
 - **Validation:** Filter unrealistic years, standardise classifications
@@ -105,15 +109,15 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 
 ### Quality Controls
 
-- Coordinate validation (-90° to 90° latitude, -180° to 180° longitude)
+- Coordinate validation (`-90°` to `90°` latitude, `-180°` to `180°` longitude)
 - Date parsing with multiple format support
 - Classification standardisation and mapping
 - Outlier detection and removal
 
 ### Machine Learning Approaches
 
-- Random Forest for sighting quality prediction
-- Isolation Forest for anomaly detection
+- [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) for sighting quality prediction
+- [Isolation Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html) for anomaly detection
 - Feature importance analysis
 - Cross-validation for model validation
 - Clustering algorithms for geographic analysis
@@ -121,7 +125,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 ## Key Capabilities
 
 - **Data Cleaning and Preparation:** Validates coordinates, timestamps, and standardises classifications
-- **Geospatial Analysis:** Interactive mapping with Folium and Plotly
+- **Geospatial Analysis:** Interactive mapping with [Folium](https://python-visualization.github.io/folium/) and [Plotly](https://plotly.com/python/)
 - **Temporal Analysis:** Examines trends by various time periods
 - **Report Classification:** ML models to predict report credibility
 - **Anomaly Detection:** Identifies unusual or suspicious reports
@@ -131,9 +135,9 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 ## Installation and Usage
 
 **Requirements:**
-- Python 3.8 or higher
-- Streamlit
-- Various data science libraries (pandas, scikit-learn, folium, plotly)
+- [Python 3.8+](https://www.python.org/)
+- [Streamlit](https://streamlit.io/)
+- Data science libraries ([pandas](https://pandas.pydata.org/), [scikit-learn](https://scikit-learn.org/), [folium](https://python-visualization.github.io/folium/), [plotly](https://plotly.com/python/))
 
 **Setup:**
 ```bash
@@ -158,8 +162,8 @@ The dashboard helps address questions such as:
 
 ## Legal and Attribution
 
-- Data used under Fair Use for educational and research purposes
-- Original data from BFRO publicly accessible database
+- Data used under [Fair Use](https://www.copyright.gov/fair-use/more-info.html) for educational and research purposes
+- Original data from [BFRO publicly accessible database](https://www.bfro.net/GDB/)
 - No personal information collected or stored
 - Educational tool for demonstrating data science techniques
 - Includes appropriate disclaimers about scientific evidence
@@ -173,4 +177,6 @@ The dashboard helps address questions such as:
 
 ---
 
-This comprehensive dashboard provides researchers, data scientists, and enthusiasts with powerful tools to explore patterns in cryptid encounters, assess report quality, and generate data-driven recommendations for field investigations.
+This comprehensive dashboard provides researchers, data scientists, and enthusiasts with powerful tools to explore patterns in cryptid encounters, assess report quality, and generate data-driven recommendations for future field research and analysis.
+
+For more information, visit the [GitHub repository](https://github.com/Meowmixforme/BigFoot) or contact the author via GitHub.
