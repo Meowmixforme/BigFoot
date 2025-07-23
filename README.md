@@ -213,7 +213,6 @@ This project incorporates datasets and code from [@kittychew/bigfoot-sightings-a
 - **Dashboard Version:** 1.0.0
 - **Release Date:** 22 July 2025
 - **Python Version:** 3.8+
-- **Streamlit Community Cloud hosted**
 
 ---
 
