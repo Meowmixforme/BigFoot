@@ -217,5 +217,3 @@ This project incorporates datasets and code from [@kittychew/bigfoot-sightings-a
 ---
 
 This comprehensive dashboard provides researchers, data scientists, and enthusiasts with powerful tools to explore patterns in cryptid encounters, assess report quality, and generate data-driven recommendations for future field research and analysis.
-
-For more information, visit the [GitHub repository](https://github.com/Meowmixforme/BigFoot) or contact the author via GitHub.
