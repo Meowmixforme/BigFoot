@@ -16,7 +16,7 @@ def render_footer():
     
     with col2:
         st.markdown(f"""
-        **🦶 Bigfoot ML Dashboard**
+        **🦶 Bigfoot**
         
         Created by **Meowmixforme** | {current_date}
         
