@@ -1,285 +1,265 @@
 """
-Dark theme styling with blue accents and proper chart sizing
+Custom styles for the BigFoot dashboard
 """
 
 import streamlit as st
 from config.settings import COLOR_PALETTE
 
 def apply_custom_styles():
-    """Apply dark theme CSS styles with improved chart layouts"""
+    """Apply custom CSS styles to the Streamlit app"""
     
-    css = f"""
+    st.markdown(f"""
     <style>
-        /* Import professional font */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        /* Global dark theme */
+        /* Main app background - Professional brown */
         .stApp {{
-            background-color: {COLOR_PALETTE['background']} !important;
-            color: {COLOR_PALETTE['primary']} !important;
+            background-color: #2D2B2A;
         }}
         
+        /* Main content area */
         .main .block-container {{
-            background-color: {COLOR_PALETTE['background']} !important;
-            color: {COLOR_PALETTE['primary']} !important;
-            font-family: 'Inter', sans-serif;
+            background-color: #2D2B2A;
             padding-top: 2rem;
-            max-width: 1200px;
+            padding-bottom: 2rem;
         }}
         
-        /* Override Streamlit's default backgrounds */
-        .main {{
-            background-color: {COLOR_PALETTE['background']} !important;
-        }}
-        
-        /* Header with dark theme */
+        /* Header styling with brown theme */
         .main-header {{
-            font-size: 2.5rem;
-            color: {COLOR_PALETTE['dark']};
-            text-align: center;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, {COLOR_PALETTE['light']} 0%, #1A202C 100%);
-            border-radius: 12px;
+            background: linear-gradient(135deg, #3E3B39 0%, #2D2B2A 100%);
+            padding: 2rem;
+            border-radius: 15px;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid #4A5568;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 15px rgba(45, 43, 42, 0.3);
+            border: 1px solid #4A4642;
         }}
         
-        /* Dark metric cards */
-        .metric-card {{
-            background: linear-gradient(135deg, {COLOR_PALETTE['light']} 0%, #2D3748 100%);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid #4A5568;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 1rem;
-            transition: all 0.2s ease;
-            border-left: 4px solid {COLOR_PALETTE['accent']};
-            color: {COLOR_PALETTE['primary']} !important;
+        .main-header h1 {{
+            color: white;
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
         }}
         
-        .metric-card:hover {{
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            border-left-color: {COLOR_PALETTE['success']};
-        }}
-        
-        /* Dark sidebar */
-        .sidebar-header {{
-            color: {COLOR_PALETTE['dark']};
+        .main-header p {{
+            color: #E8E6E3;
+            margin: 0.5rem 0 0 0;
             font-size: 1.1rem;
+        }}
+        
+        /* Sidebar header - darker brown */
+        .sidebar-header {{
+            background: linear-gradient(135deg, #1F1D1C 0%, #161514 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
             font-weight: 600;
             margin-bottom: 1rem;
-            padding: 0.75rem;
-            background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
-            border-radius: 8px;
-            border: 1px solid #4A5568;
+            border: 1px solid #2D2B2A;
         }}
         
-        .css-1d391kg {{
-            background-color: #1A202C !important;
-            border-right: 1px solid #4A5568;
+        /* Metric cards with brown theme */
+        .metric-card {{
+            background: #3E3B39;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 0.5rem 0;
+            box-shadow: 0 3px 10px rgba(45, 43, 42, 0.2);
+            border: 1px solid #4A4642;
         }}
         
-        /* Dark info boxes */
-        .info-box {{
-            background: linear-gradient(135deg, {COLOR_PALETTE['light']} 0%, #2D3748 100%);
-            border-left: 4px solid {COLOR_PALETTE['info']};
+        .metric-card h1, .metric-card h2, .metric-card h3 {{
+            color: white;
+        }}
+        
+        .metric-card p {{
+            color: #C7C4C1;
+        }}
+        
+        /* Attribution box - darker for sidebar */
+        .attribution-box {{
+            background: #1F1D1C;
+            border-left: 4px solid {COLOR_PALETTE['accent']};
             padding: 1.25rem;
             margin: 1rem 0;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid #4A5568;
-            color: {COLOR_PALETTE['primary']} !important;
+            box-shadow: 0 2px 6px rgba(31, 29, 28, 0.3);
+            color: #E8E6E3;
+            border: 1px solid #2D2B2A;
         }}
         
-        .success-box {{
-            background: linear-gradient(135deg, {COLOR_PALETTE['light']} 0%, #2D3748 100%);
-            border-left: 4px solid {COLOR_PALETTE['success']};
-            padding: 1.25rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid #4A5568;
-            color: {COLOR_PALETTE['primary']} !important;
-        }}
-        
+        /* Warning boxes with brown theme */
         .warning-box {{
-            background: linear-gradient(135deg, {COLOR_PALETTE['light']} 0%, #2D3748 100%);
+            background: #3E3B39;
             border-left: 4px solid {COLOR_PALETTE['warning']};
             padding: 1.25rem;
             margin: 1rem 0;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid #4A5568;
-            color: {COLOR_PALETTE['primary']} !important;
+            box-shadow: 0 2px 6px rgba(243, 156, 18, 0.1);
+            color: #E8E6E3;
+            border: 1px solid #4A4642;
         }}
         
-        .attribution-box {{
-            background: linear-gradient(135deg, {COLOR_PALETTE['light']} 0%, #2D3748 100%);
-            border: 1px solid {COLOR_PALETTE['warning']};
-            border-radius: 8px;
-            padding: 1rem;
+        /* Info boxes with brown theme */
+        .info-box {{
+            background: #3E3B39;
+            border-left: 4px solid {COLOR_PALETTE['info']};
+            padding: 1.25rem;
             margin: 1rem 0;
-            font-size: 0.9rem;
-            color: {COLOR_PALETTE['primary']} !important;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(93, 173, 226, 0.1);
+            color: #E8E6E3;
+            border: 1px solid #4A4642;
         }}
         
-        /* Dark footer */
+        .success-box {{
+            background: #1F1D1C;
+            border-left: 4px solid {COLOR_PALETTE['success']};
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(39, 174, 96, 0.1);
+            color: #E8E6E3;
+            border: 1px solid #2D2B2A;
+        }}
+        
+        /* Footer styles with brown theme */
         .footer {{
             margin-top: 3rem;
             padding: 2rem;
-            background: linear-gradient(135deg, {COLOR_PALETTE['light']} 0%, #1A202C 100%);
+            background: #3E3B39;
             border-radius: 12px;
             text-align: center;
-            color: {COLOR_PALETTE['primary']} !important;
+            color: #C7C4C1;
             border-top: 3px solid {COLOR_PALETTE['accent']};
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 -2px 10px rgba(45, 43, 42, 0.2);
+            border: 1px solid #4A4642;
         }}
         
-        /* Dark tabs */
+        /* Tabs styling with brown theme */
         .stTabs [data-baseweb="tab-list"] {{
             gap: 8px;
-            background-color: {COLOR_PALETTE['light']};
-            border-radius: 8px;
-            padding: 4px;
         }}
         
         .stTabs [data-baseweb="tab"] {{
-            background-color: transparent;
-            border-radius: 6px;
-            color: {COLOR_PALETTE['primary']} !important;
+            background-color: #3E3B39;
+            border-radius: 8px;
+            color: #C7C4C1;
             font-weight: 500;
+            border: 1px solid #4A4642;
         }}
         
         .stTabs [aria-selected="true"] {{
-            background-color: {COLOR_PALETTE['accent']} !important;
-            color: white !important;
+            background-color: {COLOR_PALETTE['accent']};
+            color: white;
         }}
         
-        /* Bright buttons for dark theme */
-        .stButton > button {{
-            background: linear-gradient(135deg, {COLOR_PALETTE['accent']} 0%, #3182CE 100%);
-            color: white !important;
-            border: none;
-            border-radius: 8px;
-            padding: 0.6rem 1.2rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(99, 179, 237, 0.3);
+        /* Sidebar styling - much darker brown */
+        .css-1d391kg {{
+            background-color: #161514 !important;
         }}
         
-        .stButton > button:hover {{
-            background: linear-gradient(135deg, {COLOR_PALETTE['success']} 0%, #38A169 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(104, 211, 145, 0.4);
+        /* Additional sidebar selectors */
+        section[data-testid="stSidebar"] {{
+            background-color: #161514 !important;
         }}
         
-        /* Dark form elements */
-        .stSelectbox > div > div {{
-            background-color: {COLOR_PALETTE['light']} !important;
-            border: 1px solid #4A5568 !important;
-            border-radius: 8px;
-            color: {COLOR_PALETTE['primary']} !important;
+        .css-1d391kg > div {{
+            background-color: #161514 !important;
         }}
         
-        .stMultiSelect > div > div {{
-            background-color: {COLOR_PALETTE['light']} !important;
-            border: 1px solid #4A5568 !important;
-            border-radius: 8px;
-            color: {COLOR_PALETTE['primary']} !important;
+        /* Sidebar content styling */
+        .css-1d391kg .stSelectbox > div > div {{
+            background-color: #1F1D1C;
+            border: 1px solid #2D2B2A;
+            color: #E8E6E3;
         }}
         
-        .stSlider > div > div > div {{
-            background: linear-gradient(90deg, {COLOR_PALETTE['accent']} 0%, #3182CE 100%);
+        .css-1d391kg .stMultiSelect > div > div {{
+            background-color: #1F1D1C;
+            border: 1px solid #2D2B2A;
+            color: #E8E6E3;
         }}
         
-        .streamlit-expanderHeader {{
-            background-color: {COLOR_PALETTE['light']} !important;
-            border-radius: 8px;
-            border: 1px solid #4A5568;
-            color: {COLOR_PALETTE['primary']} !important;
-        }}
-        
-        /* Force text colors for dark theme */
-        h1, h2, h3, h4, h5, h6 {{
-            color: {COLOR_PALETTE['dark']} !important;
-        }}
-        
-        p, div, span {{
-            color: {COLOR_PALETTE['primary']} !important;
-        }}
-        
-        .metric-label {{
-            color: {COLOR_PALETTE['secondary']} !important;
-            font-size: 0.9rem;
-        }}
-        
-        /* FIXED: Chart backgrounds and sizing for dark theme */
-        .js-plotly-plot {{
-            background-color: {COLOR_PALETTE['light']} !important;
-            border-radius: 8px;
-            border: 1px solid #4A5568;
-            margin: 1rem 0;
-        }}
-        
-        /* Ensure charts take full width and proper height */
-        .stPlotlyChart {{
-            width: 100% !important;
-            min-height: 400px !important;
-        }}
-        
-        .stPlotlyChart > div {{
-            width: 100% !important;
-            height: auto !important;
-            min-height: 400px !important;
-        }}
-        
-        /* Column layout improvements for charts */
-        .stColumn {{
-            padding: 0 0.5rem;
-        }}
-        
-        .stColumn > div {{
-            width: 100%;
+        .css-1d391kg .stSlider {{
+            color: #E8E6E3;
         }}
         
         /* Sidebar text colors */
         .css-1d391kg .stMarkdown {{
-            color: {COLOR_PALETTE['primary']} !important;
+            color: #E8E6E3;
         }}
         
-        /* Input field styling */
+        .css-1d391kg label {{
+            color: #E8E6E3 !important;
+        }}
+        
+        /* Button styling */
+        .stButton > button {{
+            background-color: {COLOR_PALETTE['accent']};
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }}
+        
+        .stButton > button:hover {{
+            background-color: {COLOR_PALETTE['primary']};
+            transform: translateY(-1px);
+        }}
+        
+        /* Select box styling with brown theme */
+        .stSelectbox > div > div {{
+            background-color: #3E3B39;
+            border: 1px solid #4A4642;
+            border-radius: 8px;
+            color: #E8E6E3;
+        }}
+        
+        /* Slider styling */
+        .stSlider > div > div > div {{
+            background-color: {COLOR_PALETTE['accent']};
+        }}
+        
+        /* Expander styling with brown theme */
+        .streamlit-expanderHeader {{
+            background-color: #3E3B39;
+            border-radius: 8px;
+            border: 1px solid #4A4642;
+            color: #E8E6E3;
+        }}
+        
+        /* Text color adjustments */
+        .stMarkdown, .stText {{
+            color: #E8E6E3;
+        }}
+        
+        /* Charts background */
+        .js-plotly-plot .plotly {{
+            background-color: #3E3B39 !important;
+        }}
+        
+        /* Streamlit widgets text color */
+        .stSelectbox label, .stSlider label, .stMultiSelect label {{
+            color: #E8E6E3 !important;
+        }}
+        
+        /* Input fields */
         .stTextInput > div > div > input {{
-            background-color: {COLOR_PALETTE['light']} !important;
-            color: {COLOR_PALETTE['primary']} !important;
-            border: 1px solid #4A5568 !important;
+            background-color: #3E3B39;
+            color: #E8E6E3;
+            border: 1px solid #4A4642;
         }}
         
-        /* Number input styling */
+        /* Number input */
         .stNumberInput > div > div > input {{
-            background-color: {COLOR_PALETTE['light']} !important;
-            color: {COLOR_PALETTE['primary']} !important;
-            border: 1px solid #4A5568 !important;
-        }}
-        
-        /* Fix column spacing */
-        .row-widget.stHorizontal {{
-            gap: 1rem;
-        }}
-        
-        /* Ensure proper container width */
-        .block-container {{
-            max-width: none !important;
-            padding-left: 2rem;
-            padding-right: 2rem;
+            background-color: #3E3B39;
+            color: #E8E6E3;
+            border: 1px solid #4A4642;
         }}
     </style>
-    """
-    
-    st.markdown(css, unsafe_allow_html=True)
-
-def get_custom_css():
-    """Alternative function that returns CSS string (for compatibility)"""
-    return apply_custom_styles()
+    """, unsafe_allow_html=True)
