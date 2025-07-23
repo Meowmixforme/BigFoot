@@ -4,7 +4,7 @@
 
 BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot sighting data, utilising machine learning and data visualisation. The application imports verified sighting reports from the [BFRO](https://www.bfro.net/) (Bigfoot Field Researchers Organisation) and provides interactive dashboards, maps, and predictive tools for exploring cryptid reports.
 
-> _I'm a longtime fan of the BFRO and the TV series [Finding Bigfoot]([https://www.imdb.com/title/tt1863572/](https://www.imdb.com/title/tt1948830/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_finding%2520bigf)), which inspired me to create this project to explore and visualise Bigfoot sighting data._
+> _I'm a longtime fan of the BFRO and the TV series [Finding Bigfoot](https://www.imdb.com/title/tt1948830/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_finding%2520bigf), which inspired me to create this project to explore and visualise Bigfoot sighting data._
 
 ## Data Source
 
