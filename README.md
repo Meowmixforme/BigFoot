@@ -25,7 +25,6 @@ BigFoot/
 ├── BigFoot.py              # Main Streamlit application entry point
 ├── requirements.txt        # Python dependencies
 ├── README.md               # Project documentation
-├── Dockerfile              # Container configuration
 ├── BigFoot/                # Main application package
 │   ├── config/             # Configuration files and styles
 │   ├── components/         # UI components (header, sidebar, footer)
