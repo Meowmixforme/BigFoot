@@ -51,20 +51,19 @@ def show_about_section():
         for tech in technologies:
             st.markdown(f"• {tech}")
     
-    # Legal information
+    # Legal information - FIXED VERSION
     st.subheader("⚖️ Legal Information")
     
+    # Replace the HTML version with proper Streamlit markdown
     st.markdown("""
-    <div class="attribution-box">
-        <strong>📜 Terms of Use & Attribution</strong><br><br>
-        
-        <strong>Data Usage:</strong> This application uses data from the Bigfoot Field Researchers Organization (BFRO) 
-        under Fair Use provisions for educational and research purposes.<br><br>
-        
-        <strong>Educational Purpose:</strong> This dashboard is created for educational purposes to demonstrate 
-        data science and machine learning techniques.<br><br>
-        
-        <strong>Disclaimer:</strong> This application provides analysis of reported sightings and should not be 
-        considered as scientific evidence for the existence of Bigfoot/Sasquatch.
-    </div>
-    """, unsafe_allow_html=True)
+    **📜 Terms of Use & Attribution**
+    
+    **Data Usage:** This application uses data from the Bigfoot Field Researchers Organization (BFRO) 
+    under Fair Use provisions for educational and research purposes.
+    
+    **Educational Purpose:** This dashboard is created for educational purposes to demonstrate 
+    data science and machine learning techniques.
+    
+    **Disclaimer:** This application provides analysis of reported sightings and should not be 
+    considered as scientific evidence for the existence of Bigfoot/Sasquatch.
+    """)

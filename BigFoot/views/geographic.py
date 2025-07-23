@@ -40,11 +40,32 @@ def show_geographic_analysis(df):
     else:
         df_map = df_clustered
     
-    # Create folium map
+    # Create folium map with proper tile handling
     center_lat = df_map['latitude'].mean()
     center_lon = df_map['longitude'].mean()
     
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=MAP_CONFIG['default_zoom'])
+    # Create map based on selected style with working tile services
+    if map_style == "OpenStreetMap":
+        m = folium.Map(location=[center_lat, center_lon], zoom_start=MAP_CONFIG['default_zoom'], tiles="OpenStreetMap")
+    elif map_style == "Satellite":
+        m = folium.Map(location=[center_lat, center_lon], zoom_start=MAP_CONFIG['default_zoom'])
+        folium.TileLayer(
+            tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+            attr="Esri WorldImagery",
+            name="Satellite",
+            overlay=False,
+            control=True
+        ).add_to(m)
+    else:  # Terrain
+        m = folium.Map(location=[center_lat, center_lon], zoom_start=MAP_CONFIG['default_zoom'])
+        folium.TileLayer(
+            tiles="https://tile.opentopomap.org/{z}/{x}/{y}.png",
+            attr="OpenTopoMap",
+            name="Terrain",
+            overlay=False,
+            control=True,
+            max_zoom=17
+        ).add_to(m)
     
     # Add markers with professional colors
     for idx, row in df_map.iterrows():
@@ -82,8 +103,61 @@ def show_geographic_analysis(df):
             opacity=1.0
         ).add_to(m)
     
-    # Display map
-    map_data = st_folium(m, width=700, height=500)
+    # Display map with full width
+    map_data = st_folium(m, use_container_width=True, height=500)
+    
+    # Visual legend below the map
+    st.markdown("### 🎨 Map Legend")
+    
+    if show_clusters and 'cluster' in df_clustered.columns:
+        st.markdown("**Cluster Colors:**")
+        
+        # Create visual legend for clusters
+        unique_clusters = sorted(df_clustered['cluster'].unique())
+        legend_cols = st.columns(min(len(unique_clusters), 5))  # Max 5 columns
+        
+        for i, cluster_id in enumerate(unique_clusters[:5]):  # Show first 5 clusters
+            color = MAP_CONFIG['cluster_colors'][i % len(MAP_CONFIG['cluster_colors'])]
+            with legend_cols[i]:
+                st.markdown(f"""
+                <div style="display: flex; align-items: center; margin: 5px 0;">
+                    <div style="width: 20px; height: 20px; background-color: {color}; 
+                                border: 2px solid white; border-radius: 50%; margin-right: 8px;
+                                box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+                    <span style="font-weight: bold;">Cluster {cluster_id}</span>
+                </div>
+                """, unsafe_allow_html=True)
+        
+        if len(unique_clusters) > 5:
+            st.info(f"ℹ️ Showing first 5 clusters. Total clusters: {len(unique_clusters)}")
+    
+    else:
+        st.markdown("**Classification Colors:**")
+        
+        # Create visual legend for classifications with NEW COLORS
+        classifications = [
+            ('Class A', '#E74C3C', 'Clear Visual Sighting'),
+            ('Class B', '#3498DB', 'Sounds/Tracks/Blurry'),
+            ('Class C', '#27AE60', 'Second-hand Reports')
+        ]
+        
+        legend_cols = st.columns(3)
+        
+        for i, (class_name, color, description) in enumerate(classifications):
+            with legend_cols[i]:
+                st.markdown(f"""
+                <div style="display: flex; align-items: center; margin: 5px 0;">
+                    <div style="width: 20px; height: 20px; background-color: {color}; 
+                                border: 2px solid white; border-radius: 50%; margin-right: 8px;
+                                box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+                    <div>
+                        <div style="font-weight: bold;">{class_name}</div>
+                        <div style="font-size: 12px; color: #666;">{description}</div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+    
+    st.markdown("---")
     
     # Analysis results
     col1, col2 = st.columns(2)

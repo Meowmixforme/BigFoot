@@ -1,11 +1,12 @@
 """
-Overview dashboard page
+Overview dashboard page with dark theme charts
 """
 
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from config.settings import COLOR_PALETTE
+from utils.chart_theme import apply_dark_theme_to_fig
 
 def show_overview_dashboard(df):
     """Display comprehensive overview dashboard"""
@@ -48,11 +49,11 @@ def show_overview_dashboard(df):
         st.caption("Latitude × Longitude")
         st.markdown('</div>', unsafe_allow_html=True)
     
-    # Main charts
+    # Main charts with dark theme
     col1, col2 = st.columns(2)
     
     with col1:
-        # Yearly trend with professional colors
+        # Yearly trend with dark theme
         yearly_counts = df.groupby('year').size().reset_index(name='sightings')
         
         fig = px.scatter(yearly_counts, x='year', y='sightings', 
@@ -60,19 +61,19 @@ def show_overview_dashboard(df):
                         trendline="lowess",
                         color_discrete_sequence=[COLOR_PALETTE['accent']])
         
-        fig.update_traces(marker=dict(size=8, opacity=0.7))
+        fig.update_traces(marker=dict(size=8, opacity=0.8))
+        fig = apply_dark_theme_to_fig(fig)
         fig.update_layout(
             showlegend=False,
             hovermode='x unified',
             xaxis_title="Year",
             yaxis_title="Number of Sightings",
-            plot_bgcolor='white',
-            paper_bgcolor='white'
+            height=400
         )
         st.plotly_chart(fig, use_container_width=True)
     
     with col2:
-        # Enhanced classification distribution with professional colors
+        # Enhanced classification distribution with dark theme
         class_counts = df['classification'].value_counts()
         colors = [COLOR_PALETTE['danger'], COLOR_PALETTE['warning'], COLOR_PALETTE['info']]
         
@@ -83,10 +84,11 @@ def show_overview_dashboard(df):
         fig.update_traces(
             textposition='inside', 
             textinfo='percent+label',
-            hovertemplate='<b>%{label}</b><br>Count: %{value}<br>Percentage: %{percent}<extra></extra>'
+            hovertemplate='<b>%{label}</b><br>Count: %{value}<br>Percentage: %{percent}<extra></extra>',
+            textfont={'color': 'white', 'size': 12}
         )
-        fig.update_layout(plot_bgcolor='white', paper_bgcolor='white')
+        fig = apply_dark_theme_to_fig(fig)
+        fig.update_layout(height=400)
         st.plotly_chart(fig, use_container_width=True)
-    
-    # Add more charts and insights here...
-    # (The rest of the overview dashboard functionality)
+
+    # Add more charts following the same pattern...

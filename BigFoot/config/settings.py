@@ -55,8 +55,8 @@ MAP_CONFIG = {
     "default_zoom": 4,
     "cluster_colors": ['#E74C3C', '#3498DB', '#27AE60', '#9B59B6', '#F39C12'],
     "classification_colors": {
-        'Class A': '#E74C3C', 
-        'Class B': '#F39C12', 
-        'Class C': '#F1C40F'
+        'Class A': '#E74C3C',    # Red - Clear visual sighting (highest quality)
+        'Class B': '#3498DB',    # Blue - Sounds/tracks/blurry (medium quality) 
+        'Class C': '#27AE60'     # Green - Second-hand reports (lowest quality)
     }
 }
