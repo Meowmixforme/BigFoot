@@ -1,72 +1,142 @@
-# 🦶 BigFoot
+# BigFoot Sightings Analysis Dashboard
 
-An advanced, interactive dashboard for analysing Bigfoot (Sasquatch) sighting reports with machine learning and data visualisation. This project empowers researchers, data scientists, and enthusiasts to explore patterns in cryptid encounters, identify geographical and temporal hotspots, assess report credibility, and generate recommendations for field investigations.
+## Project Overview
 
----
+BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot sighting data, utilising machine learning and data visualisation. The application imports verified sighting reports from the Bigfoot Field Researchers Organisation (BFRO) database and processes them to reveal insights about when, where, and what types of encounters occur.
 
-## 📚 What Does This Project Do?
+## Data Source
 
-**BigFoot** is a comprehensive analytics tool for Bigfoot sighting data, built in Python with Streamlit.  
-It imports authentic sighting reports from the [Bigfoot Field Researchers Organization (BFRO)](http://bfro.net/GDB/), then processes, explores, and models the data to reveal actionable insights about when, where, and what types of encounters occur.
+The project employs data from the BFRO (Bigfoot Field Researchers Organisation) database, which includes:
 
-### Main Capabilities
+- Over 4,000 North American sightings from the 1960s to the present
+- Reports classified into Class A, B, and C categories
+- Geographic coordinates and timestamps
+- Eyewitness reports, track findings, and audio encounters
 
-- **Data Cleaning and Preparation:** Parses raw BFRO data, validates coordinates and timestamps, and standardises classifications (Class A/B/C).
-- **Geospatial Analysis:** Maps sightings, clusters geographical hotspots, and presents interactive locations using Folium and Plotly.
-- **Temporal Analysis:** Examines trends by year, month, season, and day of week to highlight patterns in sighting frequency.
-- **Report Classification:** Employs Random Forest models to predict report credibility (Class A/B/C) based on spatial and temporal features.
-- **Anomaly Detection:** Identifies unusual or suspicious reports using Isolation Forest, flagging outliers for further scrutiny.
-- **Location Recommendations:** Ranks geographical regions for future research or expedition planning, based on sighting density, quality, and recency.
-- **Interactive Prediction Tool:** Allows users to input hypothetical locations and times, and see machine learning predictions for sighting quality.
-- **Advanced Data Explorer:** Powerful search, filtering, statistical summaries, and export functionality for in-depth data analysis.
-- **Exportable Research Plans:** Automatically generates recommended field research plans and allows users to export filtered data.
+**BFRO Classification System:**
+- **Class A:** Clear visual sighting in good conditions by a reliable witness (highest quality)
+- **Class B:** Possible visual or clear audio encounter, but lacking Class A clarity
+- **Class C:** Second-hand reports, stories, or anecdotal evidence (least reliable)
 
-### About BFRO Sighting Classes
+## Repository Structure
 
-BFRO sighting reports are categorised into three main classes:
+```
+BigFoot/
+├── BigFoot.py              # Main Streamlit application entry point
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+├── Dockerfile              # Container configuration
+├── BigFoot/                # Main application package
+│   ├── config/             # Configuration files and styles
+│   ├── components/         # UI components (header, sidebar, footer)
+│   ├── data/               # Data loading and processing
+│   └── views/              # Individual page views
+```
 
-- **Class A:**  
-  Sighting involving clear visual observation in good conditions, typically by a reliable witness. These reports often include physical evidence (such as tracks) and are considered the highest quality and most credible.
+## Main Application Features
 
-- **Class B:**  
-  Sighting involving possible visual observation or clear audio encounter (such as vocalisations or knocks), but lacking the clarity or reliability of Class A. These may be brief glimpses, indistinct shapes, or strong sounds, but without enough detail to be classified as Class A.
+The BigFoot dashboard comprises several interactive Streamlit pages:
 
-- **Class C:**  
-  Reports based on second-hand information, stories, or anecdotal evidence. These are less reliable, often submitted by someone who heard about an encounter from another party, or where details are vague/incomplete.
+1. **Overview Dashboard**
+   - Key metrics and statistics about the dataset
+   - Time trends and data insights
+   - Summary of sighting counts by classification
+   - Basic data quality information
 
-The dashboard uses these classes extensively in its data analysis, machine learning models, and visualisations.
+2. **Geographic Analysis**
+   - Interactive maps showing sighting locations
+   - Geographic clustering using KMeans and DBSCAN algorithms
+   - Hotspot detection and visualisation
+   - State and regional analysis
+   - Coordinate validation and mapping
 
-### Example Questions You Can Explore
+3. **Temporal Analysis**
+   - Seasonal patterns in sighting frequency
+   - Year-over-year trends
+   - Month and day-of-week analysis
+   - Time-based anomalies
+   - Historical reporting patterns
 
-- Where are Bigfoot sightings most common?
-- Are there seasonal or annual trends in reports?
-- Which locations have the highest quality (Class A) sightings?
-- Are there geographical or temporal anomalies in the data?
-- Where should field researchers focus future expeditions?
-- Can machine learning predict the credibility of a new report?
+4. **Machine Learning Analysis**
+   - Random Forest classification models for predicting report credibility
+   - Feature importance analysis
+   - Cross-validation and model performance metrics
+   - Prediction tools for hypothetical sightings
+   - Model training on spatial and temporal features
 
----
+5. **Anomaly Detection**
+   - Isolation Forest algorithm for identifying suspicious reports
+   - Statistical outlier detection
+   - Quality control flagging
+   - Unusual pattern identification
+   - Data integrity checking
 
-## 🚀 Features
+6. **Location Recommendations**
+   - Data-driven expedition planning
+   - Ranking geographical regions for future research
+   - Analysis based on sighting density, quality, and recency
+   - Research hotspot identification
+   - Field investigation planning tools
 
-- **Interactive Dashboard:** Key metrics, time trends, and data insights
-- **Geographical Clustering:** KMeans/DBSCAN for hotspot discovery
-- **Temporal Insights:** Seasonality, trends, and anomalies
-- **Machine Learning:** Classification, anomaly detection, feature importance
-- **Field Recommendations:** Data-driven expedition planning
-- **Advanced Search and Export:** Filter, explore, and save results
+7. **Advanced Data Explorer**
+   - Powerful search and filtering capabilities
+   - Statistical summaries and analysis
+   - Data export functionality (CSV, JSON formats)
+   - Interactive data tables
+   - Custom filtering options
+   - Report detail viewing
 
----
+8. **About Section**
+   - Project methodology and data processing pipeline
+   - Machine learning approaches and algorithms
+   - Visualisation techniques
+   - Quality assurance measures
+   - Legal information and attribution
+   - Version information and contact details
 
-## 📦 Installation
+## Technical Implementation
 
-### Requirements
+### Data Processing Pipeline
 
+- **Data Ingestion:** Load BFRO CSV data from GitHub repository
+- **Data Cleaning:** Remove invalid coordinates, parse timestamps
+- **Feature Engineering:** Extract temporal features, calculate distances
+- **Validation:** Filter unrealistic years, standardise classifications
+- **Enrichment:** Add seasonal indicators, geographic clusters
+
+### Quality Controls
+
+- Coordinate validation (-90° to 90° latitude, -180° to 180° longitude)
+- Date parsing with multiple format support
+- Classification standardisation and mapping
+- Outlier detection and removal
+
+### Machine Learning Approaches
+
+- Random Forest for sighting quality prediction
+- Isolation Forest for anomaly detection
+- Feature importance analysis
+- Cross-validation for model validation
+- Clustering algorithms for geographic analysis
+
+## Key Capabilities
+
+- **Data Cleaning and Preparation:** Validates coordinates, timestamps, and standardises classifications
+- **Geospatial Analysis:** Interactive mapping with Folium and Plotly
+- **Temporal Analysis:** Examines trends by various time periods
+- **Report Classification:** ML models to predict report credibility
+- **Anomaly Detection:** Identifies unusual or suspicious reports
+- **Interactive Prediction Tool:** Users can input hypothetical scenarios
+- **Exportable Research Plans:** Generate and export filtered data for research
+
+## Installation and Usage
+
+**Requirements:**
 - Python 3.8 or higher
-- pip
+- Streamlit
+- Various data science libraries (pandas, scikit-learn, folium, plotly)
 
-### Local Setup
-
+**Setup:**
 ```bash
 git clone https://github.com/Meowmixforme/BigFoot.git
 cd BigFoot
@@ -74,74 +144,34 @@ pip install -r requirements.txt
 streamlit run BigFoot.py
 ```
 
-Then visit [http://localhost:8501](http://localhost:8501) in your browser.
+The application will be available at [http://localhost:8501](http://localhost:8501)
+
+## Research Applications
+
+The dashboard helps address questions such as:
+
+- Where are Bigfoot sightings most common?
+- Are there seasonal or annual trends in reports?
+- Which locations have the highest quality sightings?
+- Are there geographical or temporal anomalies?
+- Where should researchers focus future expeditions?
+- Can machine learning predict report credibility?
+
+## Legal and Attribution
+
+- Data used under Fair Use for educational and research purposes
+- Original data from BFRO publicly accessible database
+- No personal information collected or stored
+- Educational tool for demonstrating data science techniques
+- Includes appropriate disclaimers about scientific evidence
+
+## Version Information
+
+- **Dashboard Version:** 1.0.0
+- **Release Date:** 22 July 2025
+- **Python Version:** 3.8+
+- **Streamlit Community Cloud hosted**
 
 ---
 
-## 🗂️ Repository Structure
-
-```
-BigFoot/
-├── BigFoot.py      # Main Streamlit app
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project documentation
-├── Dockerfile                # Containerisation (optional)
-└── (assets/, docs/, tests/, etc.)
-```
-
----
-
-## 📊 Data Source
-
-- **Bigfoot Field Researchers Organization (BFRO)**
-- [BFRO Geographical Database](http://bfro.net/GDB/)
-- Over 4,000 North American sightings, 1960s–present
-- Class A/B/C reports, coordinates, timestamps
-
-**Legal:** Used under Fair Use for educational and research purposes. See [BFRO Terms](http://bfro.net/GDB/) for more.
-
----
-
-## 🔬 Methodology
-
-- **Data Cleaning:** Coordinate validation, timestamp parsing, classification standardisation
-- **Feature Engineering:** Temporal (season, day of week), spatial (distance from centre), cyclical encoding
-- **Machine Learning Models:** Random Forest (classification), KMeans (clustering), Isolation Forest (anomaly detection)
-- **Visualisation:** Interactive maps (Folium), charts (Plotly)
-- **Performance:** Caching, data sampling for large datasets
-
----
-
-## 📝 Usage
-
-- Designed for researchers, educators, and enthusiasts
-- **Not** scientific proof — for pattern analysis and exploration only
-- **Do not** use location data for harassment or trespass
-
----
-
-## 👫 Contributing
-
-Pull requests, suggestions, and bug reports are welcome!
-
----
-
-## 📖 Licence
-
-MIT Licence (see [LICENSE](LICENSE))
-
----
-
-## 🙏 Acknowledgements
-
-- Data: BFRO
-- Libraries: Streamlit, Plotly, Folium, Scikit-learn, Pandas, NumPy
-- Icon: Streamlit emoji set
-
----
-
-## 📞 Contact
-
-Created by [Meowmixforme](https://github.com/Meowmixforme)
-
----
+This comprehensive dashboard provides researchers, data scientists, and enthusiasts with powerful tools to explore patterns in cryptid encounters, assess report quality, and generate data-driven recommendations for field investigations.
