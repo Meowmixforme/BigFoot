@@ -139,7 +139,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 
 ### Data Processing Pipeline
 
-- **Data Ingestion:** Load BFRO CSV data from [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv)
+- **Data Ingestion:** Load BFRO CSV data from [bfro_locations.csv](https://raw.githubusercontent.com/Meowmixforme/BigFoot/refs/heads/main/timothyrenner-bfro-sightings-data/bfro_locations.csv).
 - **Data Cleaning:** Remove invalid coordinates, parse timestamps
 - **Feature Engineering:** Extract temporal features, calculate distances
 - **Validation:** Filter unrealistic years, standardise classifications
