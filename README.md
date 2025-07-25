@@ -13,11 +13,11 @@ BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot s
 
 ## Data Source
 
-The primary dataset used in this project is [bfro_locations.csv](https://raw.githubusercontent.com/kittychew/bigfoot-sightings-analysis/main/bfro_locations.csv), originally sourced and cleaned by [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis) from the [@timothyrenner/bfro_sightings_data](https://data.world/timothyrenner/bfro-sightings-data) dataset, and ultimately derived from the [Bigfoot Field Researchers Organization (BFRO)](https://www.bfro.net/) database. Additional data files (such as bfro_reports.json and bfro_reports_geocoded.csv) from @kittychew’s repository are also referenced.
+The primary dataset used in this project is [@timothyrenner/bfro_sightings_data](https://data.world/timothyrenner/bfro-sightings-data) dataset, and ultimately derived from the [Bigfoot Field Researchers Organization (BFRO)](https://www.bfro.net/) database.
 
 **Attribution:**  
 - Special thanks to the Bigfoot Field Researchers Organization (BFRO) for providing the original dataset.  
-- Thanks to [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis) for data cleaning, processing, and  to [@timothyrenner/bfro_sightings_data](https://data.world/timothyrenner/bfro-sightings-data) for making the dataset publicly available under the MIT License.
+- Thanks to [@timothyrenner/bfro_sightings_data](https://data.world/timothyrenner/bfro-sightings-data) for making the dataset publicly available under the MIT License.
 
 The project employs data from the BFRO database, which includes:
 - Over 4,000 North American sightings from the 1960s to the present
