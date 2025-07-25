@@ -17,7 +17,7 @@ The primary dataset used in this project is [bfro_locations.csv](https://raw.git
 
 **Attribution:**  
 - Special thanks to the Bigfoot Field Researchers Organization (BFRO) for providing the original dataset.  
-- Thanks to [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis) for data cleaning, processing, and making the dataset publicly available under the MIT License.
+- Thanks to [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis) for data cleaning, processing, and [@timothyrenner/bfro_sightings_data](https://data.world/timothyrenner/bfro-sightings-data) for making the dataset publicly available under the MIT License.
 
 The project employs data from the BFRO database, which includes:
 - Over 4,000 North American sightings from the 1960s to the present
