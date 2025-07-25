@@ -200,13 +200,9 @@ The dashboard helps address questions such as:
 
 - Data used under [Fair Use](https://www.copyright.gov/fair-use/more-info.html) for educational and research purposes
 - Original data from [BFRO publicly accessible database](https://www.bfro.net/GDB/)
-- Cleaned and processed dataset from [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis), released under the [MIT License](https://github.com/kittychew/bigfoot-sightings-analysis/blob/main/LICENSE)
 - No personal information collected or stored
 - Educational tool for demonstrating data science techniques
 - Includes appropriate disclaimers about scientific evidence
-
-**MIT License Notice:**  
-This project incorporates datasets and code from [@kittychew/bigfoot-sightings-analysis](https://github.com/kittychew/bigfoot-sightings-analysis), originally licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Version Information
 
