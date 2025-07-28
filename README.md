@@ -8,7 +8,7 @@ BigFoot is a comprehensive analytics tool designed for the analysis of Bigfoot s
 
 
 
-<img width="1024" height="1024" alt="freepik__the-style-is-candid-image-photography-with-natural__3245" src="https://github.com/user-attachments/assets/08ad5fed-8333-457c-a9bb-2d3632600b10" />
+<img width="500" height="500" alt="freepik__the-style-is-candid-image-photography-with-natural__3245" src="https://github.com/user-attachments/assets/08ad5fed-8333-457c-a9bb-2d3632600b10" />
 
 
 ## Data Source
