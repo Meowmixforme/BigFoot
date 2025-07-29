@@ -1,6 +1,6 @@
-# ========================================
+
 # BIGFOOT ML DASHBOARD - MAIN ENTRY POINT
-# ========================================
+
 # Author: Meowmixforme
 # Date: 2025-07-22
 # Description: Interactive dashboard for Bigfoot sightings analysis using BFRO data
