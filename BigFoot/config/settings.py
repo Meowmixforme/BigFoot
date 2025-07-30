@@ -12,7 +12,7 @@ PAGE_CONFIG = {
 
 # Data source configuration
 DATA_CONFIG = {
-    "source_url": "https://github.com/Meowmixforme/BigFoot/blob/main/timothyrenner-bfro-sightings-data/bfro_locations.csv",
+    "source_url": "https://raw.githubusercontent.com/Meowmixforme/BigFoot/refs/heads/main/timothyrenner-bfro-sightings-data/bfro_locations.csv",
     "bfro_url": "http://bfro.net/GDB/",
     "attribution": "Bigfoot Field Researchers Organization (BFRO)"
 }
