@@ -46,7 +46,7 @@ BigFoot/
 │   └── Bigfoot.ipynb       # Exploratory analysis notebook
 ```
 
-## Main Application Features
+## Main Application Features 
 
 The BigFoot dashboard comprises several interactive Streamlit pages:
 
