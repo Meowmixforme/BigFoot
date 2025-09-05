@@ -72,7 +72,7 @@ The BigFoot dashboard comprises several interactive Streamlit pages:
 <img width="3139" height="1863" alt="Screenshot 2025-07-23 045924" src="https://github.com/user-attachments/assets/75d8b7bc-6546-4fea-b0e3-b43376c33b68" />
 
 
-3. **Temporal Analysis**
+3. **Temporal Analysis (Synthetic)**
    - Seasonal patterns in sighting frequency
    - Year-over-year trends
    - Month and day-of-week analysis
