@@ -214,3 +214,5 @@ The dashboard helps address questions such as:
 ---
 
 This comprehensive dashboard provides researchers, data scientists, and enthusiasts with powerful tools to explore patterns in cryptid encounters, assess report quality, and generate data-driven recommendations for future field research and analysis.
+
+- In memory of Dr Jeffrey Meldrum PhD
